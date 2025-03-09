@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Data Extraction Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Document Data Extraction Tool</h1>
+    </header>
+    
+    <main>
+        <div class="panel" id="left-panel">
+            <h2>Upload Document</h2>
+            <div id="drop-area">
+                <form class="upload-form">
+                    <input type="file" id="fileElem" accept=".pdf,.docx,.doc,.txt,.rtf" hidden>
+                    <label class="button" for="fileElem">Select a file</label>
+                    <p>or drag & drop files here</p>
+                </form>
+                <div id="file-info" class="hidden">
+                    <p>File: <span id="file-name"></span></p>
+                    <p>Type: <span id="file-type"></span></p>
+                    <p>Size: <span id="file-size"></span></p>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="extract-btn" class="primary-btn" disabled>Extract Data</button>
+                <button id="clear-btn" class="secondary-btn" disabled>Clear</button>
+            </div>
+        </div>
+        
+        <div class="panel" id="right-panel">
+            <h2>Extracted Data</h2>
+            <div id="table-container">
+                <div id="empty-state">
+                    <p>Upload a document and click "Extract Data" to view results here</p>
+                </div>
+                <div id="loading-indicator" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Extracting data...</p>
+                </div>
+                <div id="data-table-container" class="hidden">
+                    <div class="table-controls">
+                        <button id="print-btn" class="secondary-btn">Print</button>
+                        <button id="save-btn" class="secondary-btn">Save as PDF</button>
+                    </div>
+                    <div id="table-wrapper">
+                        <table id="data-table">
+                            <thead id="table-header"></thead>
+                            <tbody id="table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2025 Document Data Extraction Tool - Internal Use Only</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
